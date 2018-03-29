@@ -49,6 +49,8 @@ public class SortedFileSearcher {
         guard lines.count >= 3 else { return nil }
         let fullLines = lines.dropFirst().dropLast()
         
+        print(fullLines)
+        
         // search within buffer
         for line in fullLines {
             if line.hasPrefix(needle) {
