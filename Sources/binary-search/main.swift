@@ -1,19 +1,14 @@
 import Foundation
 import Core
+import Commander
 
-let arguments = CommandLine.arguments
-
-if arguments.count != 3 {
-    print("Usage: ./binary-search <string> <file>")
-    exit(1)
-}
-
-guard let searcher = SortedFileSearcher(filePath: arguments[2]) else { exit(1) }
-
-if let match = searcher.search(for: arguments[1]) {
-    print("Found match: \"\(match)\"")
-}
-else {
-    print("No match found for \"\(arguments[1])\"")
-}
-
+command(
+    Argument<String>("file", description: "The sorted file to search."),
+    Argument<String>("string", description: "The string to search for.")
+) { file, string in
+    guard let searcher = BinarySearch(in: file) else { exit(1) }
+    guard let match = searcher.search(for: string) else { exit(1) }
+    
+    print(match)
+    exit(0)
+}.run()
