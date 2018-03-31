@@ -14,6 +14,8 @@ $ cd binary-search
 $ swift build -c release -Xswiftc -static-stdlib && cp -f .build/release/binary-search /usr/local/bin/binary-search
 ```
 
+Or just use the [pre-compiled binary](https://github.com/allewun/binary-search/releases/latest).
+
 ## Usage
 
 ```
