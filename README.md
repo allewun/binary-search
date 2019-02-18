@@ -11,8 +11,8 @@ Xcode 9 is required to build the binary.
 ```bash
 $ git clone git@github.com:allewun/binary-search.git
 $ cd binary-search
-$ swift build -c release -Xswiftc -static-stdlib && cp -f .build/release/binary-search /usr/local/bin/binary-search
-```
+$ make # build and install binary at /usr/local/bin/binary-search
+``` 
 
 Or just use the [pre-compiled binary](https://github.com/allewun/binary-search/releases/latest).
 
